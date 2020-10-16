@@ -8,6 +8,10 @@ describe BirthdayCalculator do
     end
 
     it 'takes in a month' do
+      expect(@birthday.month).to eq 'October'
+    end
+
+    it 'takes in a day' do
       expect(@birthday.day).to eq '23'
     end
   end
