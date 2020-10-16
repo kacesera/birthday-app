@@ -20,8 +20,13 @@ class BirthdayCalculator
   private
 
   def count_days
-    @num_of_days = (@birthdate - @today_date).to_i
+    @num_of_days = number_days(@birthdate > @today_date)
     turn_positive if @num_of_days.negative?
+  end
+
+  def number_days(boolean)
+    return (@birthdate - @today_date).to_i if boolean
+    (@today_date - @birthday_today).to_i
   end
   
   def turn_positive
