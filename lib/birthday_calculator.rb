@@ -20,18 +20,12 @@ class BirthdayCalculator
   private
 
   def count_days
-    boolean = @birthdate > @today_date
-    @num_of_days = number_days(boolean)
-    turn_positive if @num_of_days.negative?
+    @num_of_days = number_days(@birthdate > @today_date)
   end
 
   def number_days(boolean)
     return (@birthdate - @today_date).to_i if boolean
-    (@today_date - @birthdate).to_i
-  end
-  
-  def turn_positive
-    @num_of_days *= -1
+    (parse_birthdate(@next_year) - @today_date).to_i
   end
 
   def same_day?
@@ -47,14 +41,15 @@ class BirthdayCalculator
     @today_day = time.strftime('%d')
     @today_month = time.strftime('%m')
     @today_year = time.strftime('%Y')
+    @next_year = (time.strftime('%Y').to_i + 1).to_s
   end
 
   def parse_today_date
     Date.parse "#{@today_year}-#{@today_month}-#{@today_day}"
   end
 
-  def parse_birthdate
-    Date.parse "#{@today_year}-#{@month}-#{@day}"
+  def parse_birthdate(year = @today_year)
+    Date.parse "#{year}-#{@month}-#{@day}"
   end
 
   def format_compared_dates
