@@ -9,6 +9,7 @@ class BirthdayApp < Sinatra::Base
   end
 
   post '/birthday' do
+    p params
     session[:name] = params[:name]
     session[:day] = params[:day]
     session[:month] = params[:month]

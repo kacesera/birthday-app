@@ -1,1 +1,7 @@
-Your birthday will be in <%= session[:bday].days_until_birthday %> days, <%= session[:name] %>!
+<link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+<div id='centered'>
+<h2>Your birthday will be in <%= session[:bday].days_until_birthday %> days, <%= session[:name] %>!</h2>
+</div>
+<div class='gif'>
+<img src = "/images/waiting-patiently.gif" alt_text='Just keep waiting!'>
+</div>
