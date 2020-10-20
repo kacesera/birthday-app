@@ -1,3 +1,5 @@
+require_relative 'Zodiac_calc'
+
 class BirthdayCalculator
   attr_reader :day, :month
 
@@ -15,6 +17,10 @@ class BirthdayCalculator
     format_compared_dates
     count_days
     @num_of_days
+  end
+
+  def see_star_sign
+    Zodiac_calc.new.calc_sign(@birthdate)
   end
 
   private

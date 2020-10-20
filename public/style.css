@@ -73,7 +73,7 @@ input[name='month'] {
 }
 
 input[type='submit'] {
-  width: 5%;
+  width: 10%;
   background-color: rgb(255, 101, 165);
   color: white;
   padding: 14px 20px;
